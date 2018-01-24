@@ -3,4 +3,7 @@ Temp/
 ProjectSettings/
 design-pattern.sln
 UnityPackageManager/
+Assets/Mikoko/
+*.meta
+Assembly-CSharp.csproj
 
