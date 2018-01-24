@@ -1,4 +1,4 @@
 # Design-Pattern-on-Unity
 
 ## Assets
-[] RPG Character Animation Pack
+- [ ] RPG Character Animation Pack
