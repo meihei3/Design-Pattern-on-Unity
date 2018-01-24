@@ -14,6 +14,9 @@ class IdleCommand : Command{
 
 	public void execute(){
 		_animator.SetBool ("is_walk", false);
+		_animator.SetBool ("is_attack_1", false);
+		_animator.SetBool ("is_attack_2", false);
+		_animator.SetBool ("is_jumping", false);
 	}
 
 }
