@@ -14,6 +14,7 @@ public class PunchAttackCommand : Command {
 
 	public void execute(){
 		// _animator.SetBool ("is_attack_1", true);
+		Debug.Log("Punch attack!!");
 	}
 
 }

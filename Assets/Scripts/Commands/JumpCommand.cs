@@ -19,6 +19,7 @@ public class JumpCommand : Command {
 	public void execute(){
 		_rigidbody.velocity = _jump;
 		// _animator.SetBool ("is_jumping", true);
+		Debug.Log("I'm jumping now!");
 	}
 
 }

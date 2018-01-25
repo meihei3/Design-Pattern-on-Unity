@@ -11,25 +11,24 @@ public class State : MonoBehaviour {
 	[SerializeField]
 	private bool _is_idling = false;
 
-	// private Animator _animetor;
+	 private Animator _animetor;
 
 	// Use this for initialization
 	void Start () {
-		// _animetor = gameObject.GetComponent<Animator> ();
+		 _animetor = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		_is_idling = false;
 		_is_attacking = false;
-		/*
 		var stateInfo = _animetor.GetCurrentAnimatorStateInfo (0);
 		if (stateInfo.nameHash == Animator.StringToHash ("Base Layer.Attack-1") || stateInfo.nameHash == Animator.StringToHash ("Base Layer.Attack-2")) {
 			_is_attacking = true;
 		} else if (stateInfo.nameHash == Animator.StringToHash ("Base Layer.Idle")) {
 			_is_idling = true;
 		}
-		*/
+
 	}
 
 	public bool Attacking {

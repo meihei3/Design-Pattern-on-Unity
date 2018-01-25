@@ -19,7 +19,6 @@ class MacroCommand : Command {
 	}
 
 	public void execute(){
-		Debug.Log (_index);
 		_commands [_index].execute ();
 		_index += 1;
 	}

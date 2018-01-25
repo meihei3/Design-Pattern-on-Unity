@@ -14,21 +14,16 @@ class PlayerController {
 
 	public void execute(){
 		if (!_commands.isEmpty ()) {
-			if (_commands.Count != 1) {
-				Debug.Log (_commands.Count);
-			}
-			Debug.Log (_commands[0]);
-			if (_player_state.Idling) {
-				var command = _commands.pop ();
-				if (command is MacroCommand) {
-					var Mcommand = command as MacroCommand;
-					if (Mcommand.hasNext ()) {
-						_commands.Insert (0, Mcommand);
-					}
-					Mcommand.execute ();
-				} else {
-					command.execute ();
+			Debug.Log (_commands [0]);
+			var command = _commands.pop ();
+			if (command is MacroCommand) {
+				var Mcommand = command as MacroCommand;
+				if (Mcommand.hasNext ()) {
+					_commands.Insert (0, Mcommand);
 				}
+				Mcommand.execute ();
+			} else {
+				command.execute ();
 			}
 		}
 	}
