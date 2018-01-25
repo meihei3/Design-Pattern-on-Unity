@@ -14,7 +14,7 @@ public class KickAttackCommand : Command {
 
 	public void execute(){
 		// _animator.SetBool ("is_attack_2", true);
-		Debug.Log("Kick attacked!!!");
+		Debug.Log("Kick attack!!!");
 	}
 
 }

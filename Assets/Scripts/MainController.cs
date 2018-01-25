@@ -15,7 +15,8 @@ public class MainController : MonoBehaviour {
 	private Command _button_Z;
 	private Command _button_X;
 	private Command _button_Space;
-	private MacroCommand _button_C;
+	private MacroCommand _button_A;
+	private MacroCommand _button_S;
 
 	private bool _is_jumping = false;
 	private float _time_Elapsed = 0.0f;
@@ -30,9 +31,15 @@ public class MainController : MonoBehaviour {
 		_button_Space = new JumpCommand (_player_Object);
 		_player_Action = new PlayerController (_player_Object);
 
-		_button_C = new MacroCommand (_player_Object);
-		_button_C.addCommand (_button_X);
-		_button_C.addCommand (_button_Z);
+		_button_A = new MacroCommand (_player_Object);
+		_button_A.addCommand (_button_X);
+		_button_A.addCommand (_button_Z);
+		_button_A.addCommand (_button_X);
+
+
+		_button_S = new MacroCommand (_player_Object);
+		_button_S.addCommand (_button_Space);
+		_button_S.addCommand (_button_Z);
 	}
 	
 	// Update is called once per frame
@@ -45,20 +52,29 @@ public class MainController : MonoBehaviour {
 	private void inputHandler(){
 		if (Input.anyKey) {
 			if (Input.GetKey ("right")) {
+				Debug.Log ("input right");
 				_player_Action.addNext (_button_Right);
 			}
 			if (Input.GetKey ("left")) {
+				Debug.Log ("input left");
 				_player_Action.addNext (_button_Left);
 			}
 			if (Input.GetKeyDown ("z")) {
+				Debug.Log ("input z");
 				_player_Action.addNext (_button_Z);
 			} else if (Input.GetKeyDown ("x")) {
+				Debug.Log ("input x");
 				_player_Action.addNext (_button_X);
-			} else if (Input.GetKeyDown ("c")) {
-				_player_Action.addNext(_button_C);
+			} else if (Input.GetKeyDown ("a")) {
+				Debug.Log ("input a");
+				_player_Action.addNext(_button_A);
+			}else if(Input.GetKeyDown ("s")) {
+				Debug.Log ("input s");
+				_player_Action.addNext(_button_S);
 			}
 
 			if (Input.GetKeyDown ("space")) {
+				Debug.Log ("input space");
 				if (!_is_jumping) {
 					_player_Action.addNext (_button_Space);
 				} 
